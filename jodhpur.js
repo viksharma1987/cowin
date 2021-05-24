@@ -1,12 +1,13 @@
 
 
-const min_age=18;
-const min_slots=10;
-const id="502";
-const refresh_rate=3000
+var min_age=18;
+var min_slots=10;
+var id="294";
+var refresh_rate=1000
 
-const bot_token="1881620453:AAHohggV5AoCfM9PhSEwqOoHV0QPSMRu4Q4"
-const channel="JODVaccineQuickAlert"
+
+var bot_token="1881620453:AAHohggV5AoCfM9PhSEwqOoHV0QPSMRu4Q4"
+var channel="BLRVaccineQuickAlert"
 
 
 
@@ -14,8 +15,21 @@ var slotData = '';
 
 function getVaccineSlots (id) {
   console.log("Preparing to call get vaccine slots");
-    var todayDate = (new Date()).toLocaleDateString('en-GB').replaceAll("/","-");
-    var api = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=${id}&date=${todayDate}`;
+    
+    var now = new Date();
+
+    if (now.getHours() <= 18) {
+      var startDate = now.toLocaleDateString('en-GB').replaceAll("/","-");
+      console.log('Searching for today - ' + startDate)
+    } else {
+      var tomorrow = new Date()
+      tomorrow.setDate(now.getDate() + 1)
+      var startDate = tomorrow.toLocaleDateString('en-GB').replaceAll("/","-");
+      console.log('Searching for tomorrow - ' + startDate)
+    }
+
+    
+    var api = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=${id}&date=${startDate}`;  
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
