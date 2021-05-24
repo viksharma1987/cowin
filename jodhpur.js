@@ -18,7 +18,7 @@ function getVaccineSlots (id) {
     
     var now = new Date();
 
-    if (now.getHours() <= 18) {
+    if (now.getHours() <= 12) {
       var startDate = now.toLocaleDateString('en-GB').replaceAll("/","-");
       console.log('Searching for today - ' + startDate)
     } else {
