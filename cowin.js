@@ -3,7 +3,7 @@
 const min_age=18;
 const min_slots=10;
 const id="502";
-const refresh_rate=1000
+const refresh_rate=3000
 
 const bot_token="1881620453:AAHohggV5AoCfM9PhSEwqOoHV0QPSMRu4Q4"
 const channel="JODVaccineQuickAlert"
