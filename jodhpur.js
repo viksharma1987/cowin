@@ -3,7 +3,7 @@
 var min_age=18;
 var min_slots=10;
 var id="502";
-var refresh_rate=15000
+var refresh_rate=10000
 
 
 var bot_token="1881620453:AAHohggV5AoCfM9PhSEwqOoHV0QPSMRu4Q4"
