@@ -17,9 +17,8 @@ function getVaccineSlots (id) {
   console.log("Preparing to call get vaccine slots");
     
     var now = new Date();
-    console.log("Vivek" + now.getHours());
 
-    if (now.getHours() <= 12) {
+    if (now.getHours() <= 18) {
       var startDate = now.toLocaleDateString('en-GB').replaceAll("/","-");
       console.log('Searching for today - ' + startDate)
     } else {
